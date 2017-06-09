@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".VectorAssetActivity">
+        </activity>
+        <activity android:name=".IconfontActivity">
+        </activity>
     </application>
 
 </manifest>
