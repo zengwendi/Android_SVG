@@ -61,14 +61,13 @@ File -> New -> Vector Asset
 <br>
 **添加兼容性支持**<br>
 首先，你需要在项目的build.gradle脚本中，增加对Vector兼容性的支持，代码如下所示：
-<br>
-```
-android {
-    defaultConfig {
-        vectorDrawables.useSupportLibrary = true
-    }
-}
-```<br>
+
+	android {
+    	 defaultConfig {
+       	 	vectorDrawables.useSupportLibrary = true
+   	 	}
+	}
+
 在defaultConfig中添加了<br>
 
 
@@ -88,8 +87,7 @@ android {
 3、将android:src属性，换成app:srcCompat即可<br>
 代码如下	:<br/>
 
-
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -153,6 +151,7 @@ iconfont在Android中的使用官网已经做了非常详细介绍[http://www.ic
 每次都给TextView设置指定文字是不是也很繁琐,而且一直不断的在读取iconfont.ttf文字,也很浪费内存,我们完全可以把这个抽离出来,说干就干。
 首先我们要读取到的是assets目录下的iconfont.ttf文件；这里我把它放到自定义的Application中，这样就只要读取一次，代码如下：
 
+
     public class MyApplication extends Application {
 
     public static Typeface iconfont;
@@ -169,6 +168,7 @@ iconfont在Android中的使用官网已经做了非常详细介绍[http://www.ic
     }
 
 这里就实例化了iconfont。然后给每TextView设置Typeface，这肯定不是我们想要的，所以我们自定义一个TextView然后初始化时setTypeface就可以了代码如下：
+
 
     public class TextViewIcon extends AppCompatTextView {
     public TextViewIcon(Context context) {
@@ -193,6 +193,7 @@ iconfont在Android中的使用官网已经做了非常详细介绍[http://www.ic
 
     }
 就下了就可以直接在layout文件中使用了
+
 
     <com.example.svgdemo.TextViewIcon
         android:id="@+id/text_icon"
